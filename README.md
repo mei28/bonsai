@@ -21,7 +21,7 @@ Bonsai organizes your Git worktrees under a single directory, provides hooks for
 ### cargo
 
 ```sh
-cargo install bonsai
+cargo install bonsai-wt
 ```
 
 ### Nix (flake)

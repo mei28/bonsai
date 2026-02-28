@@ -1,5 +1,5 @@
 [package]
-name = "bonsai"
+name = "bonsai-wt"
 version = "0.1.0"
 edition = "2021"
 authors = ["mei"]
@@ -10,6 +10,9 @@ readme = "README.md"
 keywords = ["git", "worktree", "cli", "productivity"]
 categories = ["command-line-utilities", "development-tools"]
 exclude = [".claude/", ".tmp/"]
+
+[lib]
+name = "bonsai"
 
 [[bin]]
 name = "bonsai"
