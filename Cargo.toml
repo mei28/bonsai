@@ -2,7 +2,14 @@
 name = "bonsai"
 version = "0.1.0"
 edition = "2021"
+authors = ["mei"]
 description = "Intuitive Git worktree management CLI"
+license = "MIT"
+repository = "https://github.com/mei28/bonsai"
+readme = "README.md"
+keywords = ["git", "worktree", "cli", "productivity"]
+categories = ["command-line-utilities", "development-tools"]
+exclude = [".claude/", ".tmp/"]
 
 [[bin]]
 name = "bonsai"
