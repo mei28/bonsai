@@ -10,7 +10,7 @@ pub fn setup_repo() -> (TempDir, PathBuf) {
     let tmp = TempDir::new().expect("failed to create temp dir");
     let repo = tmp.path().to_path_buf();
 
-    run_git(&repo, &["init"]);
+    run_git(&repo, &["init", "-b", "main"]);
     run_git(&repo, &["config", "user.email", "test@test.com"]);
     run_git(&repo, &["config", "user.name", "Test"]);
     run_git(&repo, &["commit", "--allow-empty", "-m", "initial"]);
