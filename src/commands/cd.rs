@@ -2,12 +2,17 @@ use crate::error::{BonsaiError, Result};
 use crate::git::runner::GitRunner;
 
 pub fn exec(git: &GitRunner, worktree: &str) -> Result<()> {
+    let worktrees = git.worktree_list()?;
+
     if worktree == "@" {
-        println!("{}", git.repo_root.display());
+        let main_wt = worktrees
+            .first()
+            .ok_or_else(|| BonsaiError::WorktreeNotFound {
+                name: "@".to_string(),
+            })?;
+        println!("{}", main_wt.path.display());
         return Ok(());
     }
-
-    let worktrees = git.worktree_list()?;
 
     let wt = worktrees
         .iter()
